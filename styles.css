@@ -1,0 +1,689 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #333;
+}
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 40px;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
+  box-shadow: 0 6px 20px rgba(11, 78, 219, 0.12);
+
+  border-bottom: 1px solid rgba(11, 78, 219, 0.08);
+}
+
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0b4edb;
+  letter-spacing: 0.4px;
+}
+
+.logo img {
+  height: 100px;        /* ajustable */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* NAVEGACIÓN */
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+  color: #1f2937;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #0b4edb;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #0b4edb;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+
+/* BUSCADOR */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(11, 78, 219, 0.2);
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 20px;
+  width: 200px;
+}
+
+
+/* ===========================
+   SLIDER AUTOMÁTICO
+=========================== */
+.slider-section {
+  padding: 30px 0;
+}
+
+.slider-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+/* ===========================
+   FLECHAS
+=========================== */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 36px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.slider-btn.prev {
+  left: 15px;
+}
+
+.slider-btn.next {
+  right: 15px;
+}
+
+
+/* ===========================
+   SECCIÓN SOLUCIONES
+=========================== */
+.solutions {
+  padding: 5px 5px; /* antes 60px */
+  text-align: center;
+}
+
+.solutions h2 {
+  font-size: 50px; /* antes 28px */
+  color: #0b4edb;
+  margin-bottom: 35px; /* antes 50px */
+}
+
+.solutions h2 span {
+  text-decoration: underline;
+}
+
+/* ===========================
+   GRID
+=========================== */
+.solutions-grid {
+  max-width: 980px; /* antes 1100px */
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px; /* antes 30px */
+}
+
+/* ===========================
+   CARD
+=========================== */
+.solution-card {
+  background: linear-gradient(135deg, #0b4edb, #0837a8);
+  border-radius: 30px; /* antes 20px */
+  padding: 50px; /* antes 30px */
+  display: flex;
+  align-items: center;
+  gap: 20px; /* antes 25px */
+  box-shadow: 0 15px 30px rgba(11,78,219,0.25);
+}
+
+/* ===========================
+   IMAGEN
+=========================== */
+.solution-img {
+  background: radial-gradient(circle at top, #0e6bff, #0b3fa6);
+  border-radius: 18px; /* antes 16px */
+  padding: 30px; /* antes 20px */
+  min-width: 150px; /* antes 180px */
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.solution-img img {
+  max-width: 200%;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+/* ===========================
+   TEXTO
+=========================== */
+.solution-text {
+  text-align: left;
+  color: #fff;
+}
+
+.solution-text h3 {
+  font-size: 30px; /* antes 20px */
+  margin-bottom: 6px;
+}
+
+.solution-text a {
+  font-size: 14px; /* antes 14px */
+  color: #cfe0ff;
+  text-decoration: none;
+}
+
+.solution-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* ===========================
+   SERVICIO TÉCNICO
+=========================== */
+.tech-service {
+  background: linear-gradient(135deg, #0b3fdc, #0a2ea3);
+  padding: 70px 20px;
+}
+
+/* CONTENEDOR */
+.tech-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ===========================
+   TEXTO
+=========================== */
+.tech-text {
+  color: #fff;
+}
+
+.tech-text h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.tech-text h2 span {
+  text-decoration: underline;
+}
+
+/* LISTA */
+.tech-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.tech-list li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.tech-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #cfe0ff;
+  font-size: 18px;
+}
+
+/* BOTÓN */
+.tech-btn {
+  display: inline-block;
+  background: #2ecc71;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.tech-btn:hover {
+  background: #27ae60;
+}
+
+/* ===========================
+   IMAGEN
+=========================== */
+.tech-image {
+  display: flex;
+  justify-content: center;
+}
+
+.tech-image img {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 16px;
+  background: radial-gradient(circle at top, #0e6bff, #0837a8);
+  padding: 20px;
+}
+
+/*===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .tech-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .tech-list li {
+    text-align: left;
+    display: inline-block;
+  }
+
+  .tech-image {
+    margin-top: 30px;
+  }
+}
+ @media (max-width: 768px) {
+  .header {
+    padding: 14px 20px;
+  }
+
+  .nav {
+    display: none; /* luego podemos hacer menú hamburguesa */
+  }
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+  background: linear-gradient(135deg, #05052d, #0b1a5a);
+  color: #ffffff;
+  padding: 70px 20px 50px;
+  margin-top: 60px; /* separa del contenido anterior */
+}
+
+/* CONTENEDOR */
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* ===========================
+   COLUMNAS
+=========================== */
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-column p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d6dcff;
+}
+
+/* ===========================
+   ICONOS SOCIALES
+=========================== */
+.social-icons {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  background: #1e2fbf;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  background: #3d5cff;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   CONTACTO
+=========================== */
+.contact-list {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.contact-list li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #d6dcff;
+  line-height: 1.4;
+}
+
+/* ===========================
+   MAPA
+=========================== */
+.map {
+  margin-top: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: #000;
+}
+
+.map iframe {
+  width: 100%;
+  height: 180px;
+  border: 0;
+  display: block;
+}
+
+/* ===========================
+   MENÚ
+=========================== */
+.footer-menu {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.footer-menu li {
+  margin-bottom: 10px;
+}
+
+.footer-menu a {
+  text-decoration: none;
+  color: #d6dcff;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: #ffffff;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ===========================
+   MARCAS - SLIDER INFINITO
+=========================== */
+.brands {
+  background: #f5f7fb;
+  padding: 35px 0;
+  overflow: hidden;
+}
+
+/* pista animada */
+.brands-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: max-content;
+  animation: scrollBrands 30s linear infinite; /* velocidad */
+}
+
+/* logos */
+.brands-track img {
+  height: 45px;          /* 🔹 tamaño pequeño */
+  width: auto;
+  opacity: 0.85;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.brands-track img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* animación */
+@keyframes scrollBrands {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .brands-track {
+    gap: 40px;
+  }
+
+  .brands-track img {
+    height: 38px;
+  }
+}
+.brands-track:hover {
+  animation-play-state: paused;
+}
+.slider-track {
+  will-change: transform;
+}
+
+/* ==================================================
+   SECCIÓN: PÁGINA DE PRODUCTOS
+   Contenedor principal de impresoras.html
+================================================== */
+.product-page {
+  padding: 60px 20px;     /* Espaciado superior/inferior y laterales */
+  max-width: 1200px;      /* Ancho máximo del contenido */
+  margin: auto;           /* Centra el contenido horizontalmente */
+}
+
+/* ==================================================
+   TÍTULO DE LA PÁGINA
+================================================== */
+.product-page h1 {
+  text-align: center;     /* Centra el título */
+  margin-bottom: 50px;    /* Separación con la grilla */
+  color: #0b4edb;         /* Color corporativo */
+}
+
+/* ==================================================
+   GRID DE PRODUCTOS
+   Distribuye las tarjetas automáticamente
+================================================== */
+.product-grid {
+  display: grid;                                  /* Layout en grilla */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;                                     /* Espacio entre tarjetas */
+}
+
+/* ==================================================
+   TARJETA DE PRODUCTO
+================================================== */
+.product-card {
+  background: #fff;                               /* Fondo blanco */
+  border-radius: 16px;                            /* Bordes redondeados */
+  padding: 25px;                                 /* Espaciado interno */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);       /* Sombra suave */
+  text-align: center;                             /* Contenido centrado */
+}
+
+/* ==================================================
+   IMAGEN DEL PRODUCTO
+================================================== */
+.product-card img {
+  max-width: 100%;        /* No excede el ancho del contenedor */
+  height: 180px;          /* Altura fija para uniformidad */
+  object-fit: contain;    /* Mantiene proporción sin recortar */
+}
+
+/* ==================================================
+   NOMBRE DEL PRODUCTO
+================================================== */
+.product-card h3 {
+  margin: 15px 0;         /* Separación superior e inferior */
+  color: #0b4edb;         /* Color corporativo */
+}
+
+/* ==================================================
+   LISTA DE CARACTERÍSTICAS
+================================================== */
+.product-card ul {
+  text-align: left;       /* Texto alineado a la izquierda */
+  font-size: 14px;        /* Tamaño legible */
+  margin-bottom: 20px;    /* Espacio antes del botón */
+}
+
+/* ==================================================
+   BOTÓN WHATSAPP
+================================================== */
+.btn-whatsapp {
+  display: inline-block;  /* Permite padding y margen */
+  background: #25d366;    /* Verde WhatsApp */
+  color: #fff;            /* Texto blanco */
+  padding: 10px 18px;     /* Tamaño del botón */
+  border-radius: 6px;     /* Bordes suaves */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold;     /* Texto destacado */
+}
+
+/* ===============================
+   BOTÓN WHATSAPP FLOTANTE (FIX)
+================================ */
+
+.whatsapp-float {
+  position: fixed !important;
+  right: 20px;
+  bottom: 30%;
+  width: 56px;
+  height: 56px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+
+  animation: whatsapp-pulse 2.5s ease-in-out infinite;
+
+}
+
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+}
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
